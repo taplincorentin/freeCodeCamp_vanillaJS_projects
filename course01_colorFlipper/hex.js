@@ -3,4 +3,18 @@ const btn = document.getElementById('btn');
 const color = document.querySelector('.color');
 
 btn.addEventListener('click', function(){
+    let hexColor = '#'
+    
+    for(let i = 0; i<6; i++){
+        hexColor += hex[getRandomNumber()];
+    }
+
+    document.body.style.backgroundColor = hexColor;
+    color.textContent = hexColor;
 })
+
+function getRandomNumber() {
+    //Math.floor -> rounds to lower integer
+    //Math.random -> random number between 0 and 1 but nerver 1
+    return Math.floor(Math.random() * hex.length);
+}
